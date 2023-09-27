@@ -13,6 +13,7 @@ import com.example.provaalex.activities.Classes.Supermarcado
 import com.example.provaalex.databinding.ActivityInserirBinding
 
 class InsertActivity : AppCompatActivity(), View.OnClickListener {
+
     private lateinit var binding: ActivityInserirBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,8 +21,13 @@ class InsertActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityInserirBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var empresa = ArrayList<Empresa>()
-        var i = 0
+        var cinema = ArrayList<Cinema>()
+        var mercado = ArrayList<Supermarcado>()
+        var posto = ArrayList<PostoGasolina>()
+
+        var c = 0
+        var m = 0
+        var p = 0
 
         binding.radioCinema.setOnClickListener(this)
         binding.radioPosto.setOnClickListener(this)
@@ -40,7 +46,10 @@ class InsertActivity : AppCompatActivity(), View.OnClickListener {
                 caixa = binding.editCaixaDoCinema.text.toString().toFloat()
                 qtdLugares = binding.editQtdAcentosDoCinema.text.toString().toInt()
 
-                empresa.add(Cinema(nome, cnpj, caixa, qtdLugares))
+                cinema.add(Cinema(nome, cnpj, caixa, qtdLugares))
+
+                Toast.makeText(this,"\n ${cinema[c]} foi inserido",Toast.LENGTH_LONG).show()
+                c++
             }
 
             if (binding.radioMercado.isChecked) {
@@ -49,7 +58,10 @@ class InsertActivity : AppCompatActivity(), View.OnClickListener {
                 caixa = binding.editCaixaDoMercado.text.toString().toFloat()
                 temArCondicionado = binding.radioSim.isChecked
 
-                empresa.add(Supermarcado(nome, cnpj, caixa, temArCondicionado))
+                mercado.add(Supermarcado(nome, cnpj, caixa, temArCondicionado))
+
+                Toast.makeText(this,"\n ${mercado[m]} foi inserido",Toast.LENGTH_LONG).show()
+                m++
             }
 
             if (binding.radioPosto.isChecked) {
@@ -58,17 +70,13 @@ class InsertActivity : AppCompatActivity(), View.OnClickListener {
                 caixa = binding.editCaixaDoPosto.text.toString().toFloat()
                 capacidadeDoTanque = binding.editCapacidadeDoPosto.text.toString().toFloat()
 
-                empresa.add(PostoGasolina(nome, cnpj, caixa, capacidadeDoTanque))
+                posto.add(PostoGasolina(nome, cnpj, caixa, capacidadeDoTanque))
+
+                Toast.makeText(this,"\n ${posto[p]} foi inserido",Toast.LENGTH_LONG).show()
+                p++
             }
-
-
-            Toast.makeText(this,"\n ${empresa[i]} foi inserido",Toast.LENGTH_LONG).show()
-            i++
         }
-
-
-        }
-
+    }
 
     override fun onClick(view: View) {
         when (view.id) {
@@ -91,12 +99,8 @@ class InsertActivity : AppCompatActivity(), View.OnClickListener {
                 binding.inputsCinema.isInvisible = true
                 binding.inputsMercado.isInvisible = false
             }
-
         }
     }
-
-
-
 }
 
 /*when(it.id) {

@@ -4,10 +4,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import com.example.provaalex.R
+import com.example.provaalex.activities.Classes.Cinema
+import com.example.provaalex.activities.Classes.Empresa
+import com.example.provaalex.activities.Classes.PostoGasolina
+import com.example.provaalex.activities.Classes.Supermarcado
 import com.example.provaalex.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+open class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -16,7 +21,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var cinema = ArrayList<Cinema>()
+        var mercado = ArrayList<Supermarcado>()
+        var posto = ArrayList<PostoGasolina>()
         var empresa: ArrayList<Int> = ArrayList()
+
 
         binding.buttonInserir.setOnClickListener(this)
         binding.buttonMostrar.setOnClickListener(this)
@@ -25,19 +34,21 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-
     override fun onClick(view: View) {
-        when(view.id) {
+        when (view.id) {
 
             R.id.button_inserir -> {
                 startActivity(Intent(this, InsertActivity::class.java))
             }
+
             R.id.button_mostrar -> {
                 startActivity(Intent(this, ShowActivity::class.java))
             }
+
             R.id.button_remover -> {
                 startActivity(Intent(this, RemoveActivity::class.java))
             }
+
             R.id.button_alterar -> {
                 startActivity(Intent(this, UpdadeActivity::class.java))
             }
@@ -45,4 +56,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         }
     }
-    }
+}
+
+private fun Bundle.putParcelable(s: String, mercado: ArrayList<Supermarcado>) {
+
+}
