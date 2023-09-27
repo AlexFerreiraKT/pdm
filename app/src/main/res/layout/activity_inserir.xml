@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.InsertActivity">
+
+    <RadioGroup
+
+        android:id="@+id/radio_radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_cinema"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cinema" />
+
+        <RadioButton
+            android:id="@+id/radio_posto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Posto" />
+
+        <RadioButton
+            android:id="@+id/radio_mercado"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mercado" />
+
+    </RadioGroup>
+
+    <!-- ======================================================================================== -->
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/inputs_cinema"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/edit_nome_do_cinema"
+            android:inputType="text"
+            android:hint="Nome do cinema"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edit_cnpj_do_cinema"
+            android:layout_below="@id/edit_nome_do_cinema"
+            android:inputType="text"
+            android:hint="CNPJ"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edit_caixa_do_cinema"
+            android:layout_below="@id/edit_cnpj_do_cinema"
+            android:inputType="numberDecimal"
+            android:hint="Caixa"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edit_qtd_acentos_do_cinema"
+            android:layout_below="@id/edit_caixa_do_cinema"
+            android:inputType="number"
+            android:hint="Quantidade de lugares"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <!-- ======================================================================================== -->
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/inputs_posto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/edit_nome_do_posto"
+            android:inputType="text"
+            android:hint="Nome do posto"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edit_cnpj_do_posto"
+            android:layout_below="@id/edit_nome_do_posto"
+            android:inputType="text"
+            android:hint="CNPJ"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edit_caixa_do_posto"
+            android:layout_below="@id/edit_cnpj_do_posto"
+            android:inputType="numberDecimal"
+            android:hint="Caixa"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edit_capacidade_do_posto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_caixa_do_posto"
+            android:layout_centerInParent="true"
+            android:hint="Capacidade do tanque"
+            android:inputType="numberDecimal" />
+
+
+
+    </RelativeLayout>
+
+    <!-- ======================================================================================== -->
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/inputs_mercado"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/edit_nome_do_mercado"
+            android:inputType="text"
+            android:hint="Nome do mercado"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edit_cnpj_do_mercado"
+            android:layout_below="@id/edit_nome_do_mercado"
+            android:inputType="text"
+            android:hint="CNPJ"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/edit_caixa_do_mercado"
+            android:layout_below="@id/edit_cnpj_do_mercado"
+            android:inputType="numberDecimal"
+            android:hint="Caixa"
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/text_ar_condicionado"
+            android:text="Tem ar condicionado?"
+            android:layout_below="@id/edit_caixa_do_mercado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RadioGroup
+            android:id="@+id/radio_ar_condicionado"
+            android:layout_below="@id/text_ar_condicionado"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radio_sim"
+                android:text="SIM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <RadioButton
+                android:id="@+id/radio_nao"
+                android:text="NAO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button_enviar"
+        android:layout_centerHorizontal="true"
+        android:text="ENVIAR"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/text_ver"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/button_enviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>
